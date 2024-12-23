@@ -4,6 +4,7 @@ package com.tushar.MovieBookingApp.controllers;
 
 import com.tushar.MovieBookingApp.Service.ShowService;
 import com.tushar.MovieBookingApp.request.ShowRequest;
+import com.tushar.MovieBookingApp.request.ShowSeatRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,4 +31,15 @@ public class ShowController {
         }
 
     }
+    @PostMapping("/associateSeats")
+    public ResponseEntity<String> associateShowSeats(@RequestBody ShowSeatRequest showSeatRequest) {
+        try {
+            String result = showService.associateShowSeats(showSeatRequest);
+            return new ResponseEntity<>(result, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
+
 }
+
