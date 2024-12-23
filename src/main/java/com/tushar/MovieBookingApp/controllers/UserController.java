@@ -1,7 +1,7 @@
 package com.tushar.MovieBookingApp.controllers;
 
+import com.tushar.MovieBookingApp.Service.MovieService;
 import com.tushar.MovieBookingApp.request.UserRequest;
-import com.tushar.MovieBookingApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
+
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private MovieService.UserService userService;
+
 
 
     @PostMapping("/addNew")
@@ -27,5 +29,4 @@ public class UserController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
-
 }
