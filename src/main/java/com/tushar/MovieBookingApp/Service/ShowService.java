@@ -6,12 +6,14 @@ import com.tushar.MovieBookingApp.Enums.SeatType;
 import com.tushar.MovieBookingApp.convertor.ShowConvertor;
 import com.tushar.MovieBookingApp.entity.*;
 import com.tushar.MovieBookingApp.exceptions.MovieDoesNotExists;
+import com.tushar.MovieBookingApp.exceptions.ShowDoesNotExists;
 import com.tushar.MovieBookingApp.exceptions.TheaterDoesNotExists;
 import com.tushar.MovieBookingApp.repositries.MovieRepository;
 import com.tushar.MovieBookingApp.repositries.ShowRepository;
 import com.tushar.MovieBookingApp.repositries.TheaterRepository;
 import com.tushar.MovieBookingApp.request.ShowRequest;
 
+import com.tushar.MovieBookingApp.request.ShowSeatRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
